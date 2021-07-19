@@ -1,3 +1,4 @@
+from grade import Grade;
 # Calculator 클래스는 object 클래스를 상속한다.
 class Calculator(object):
 
@@ -24,31 +25,46 @@ class Calculator(object):
     @staticmethod
     def main():
         while 1:
-            num1 = int(input('first number: '))
-            num2 = int(input('second number: '))
-            calc = Calculator(num1, num2)
-            menu = input('0-Exit 1: + 2: - 3: * 4: / 5: %\n')
+            menu = input('0-Exit 1: + 2: - 3: * 4: / 5: % 6: 학점\n')
             if menu == '0':
                 return
             elif menu == '1':
+                num1 = int(input('first number: '))
+                num2 = int(input('second number: '))
+                calc = Calculator(num1, num2)
                 print(f'{calc.num1} + {calc.num2} = {calc.add()}')
                 print('*' * 100)
                 continue
             elif menu == '2':
+                num1 = int(input('first number: '))
+                num2 = int(input('second number: '))
+                calc = Calculator(num1, num2)
                 print(f'{calc.num1} - {calc.num2} = {calc.subtract()}')
                 print('*' * 100)
                 continue
             elif menu == '3':
+                num1 = int(input('first number: '))
+                num2 = int(input('second number: '))
+                calc = Calculator(num1, num2)
                 print(f'{calc.num1} * {calc.num2} = {calc.multiple()}')
                 print('*' * 100)
                 continue
             elif menu == '4':
+                num1 = int(input('first number: '))
+                num2 = int(input('second number: '))
+                calc = Calculator(num1, num2)
                 print(f'{calc.num1} / {calc.num2} = {calc.divide()}')
                 print('*' * 100)
                 continue
             elif menu == '5':
+                num1 = int(input('first number: '))
+                num2 = int(input('second number: '))
+                calc = Calculator(num1, num2)
                 print(f'{calc.num1} % {calc.num2} = {calc.remain()}')
                 print('*' * 100)
+                continue
+            elif menu == '6':
+                Grade.avercontroll(self=Grade)
                 continue
             else:
                 print('Wrong Selected Number')
