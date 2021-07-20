@@ -14,13 +14,14 @@ class Contacts:
         print(f'{self.name}, {self.phone}, {self.email}, {self.address}')
 
 
-def set_contact(name, phone, email, address):
-    return Contacts(name, phone, email, address)
+def set_contact():
+    return Contacts(input('name: '), input('phone: '), input('email: '), input('address: '))
 
 
 def get_contact(ls):
     for i in ls:
         i.to_string()
+
 
 def del_contact(contacts, name):
     for i, val in enumerate(contacts):
@@ -50,7 +51,7 @@ def main():
         menu = menu2(['Exit', '등록', '조회', '삭제'])
         if menu == 0: return
         elif menu == 1:
-            t = set_contact(input('name: '), input('phone: '), input('email: '), input('address: '))
+            t = set_contact()
             ls.append(t)
             pass
         elif menu == 2:
