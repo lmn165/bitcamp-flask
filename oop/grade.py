@@ -3,8 +3,8 @@
 평균점수를 통해 A ~ F를 출력하시오.
 '''
 
-class Grade(object):
 
+class Grade(object):
     def __init__(self, name, kor, eng, math):
         self.kor = kor
         self.eng = eng

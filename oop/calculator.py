@@ -1,5 +1,7 @@
 from grade import Grade;
 # Calculator 클래스는 object 클래스를 상속한다.
+
+
 class Calculator(object):
 
     # Domain은 결국 속성 값들을 담는 정형화 된 객체이기 때문에 아래와 같이 간략하게 생략하여 사용한다.
@@ -68,5 +70,6 @@ class Calculator(object):
                 continue
             else:
                 print('Wrong Selected Number')
+
 
 Calculator.main()

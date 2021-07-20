@@ -37,4 +37,5 @@ class Grade(object):
         else:
             print('F 학점')
 
+
 Grade.main()
