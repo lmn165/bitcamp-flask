@@ -15,13 +15,20 @@ class BugsMusic(object):
 
     def scrap(self):
         soup = BeautifulSoup(urlopen(self.url).read(), 'lxml')
-        # n_artists = 0
-        # n_title = 0
-        ls_artist = soup.find_all(name='p', attrs={'class':'artist'})
+        titles = soup.find_all(name='p', attrs={'class':'title'})
+        artists = soup.find_all(name='p', attrs={'class':'artist'})
+        _ = 0
+        for title, artist in zip(titles, artists):
+            _ += 1
+            print(f'{"*" * 50}\n{_} Rank\nTitle: {title.find("a").text}\nArtist: {artist.find("a").text}')
+
+
+        '''
         for i, val in enumerate(soup.find_all(name='p', attrs={'class':'title'})):
             print(str(i+1) + ' Rank')
             print('title: ' + val.find('a').text)
             print('Artist: ' + ls_artist[i].find('a').text)
+        '''
 
 def main():
     # 20210720
