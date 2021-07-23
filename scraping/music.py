@@ -1,7 +1,8 @@
 import pandas as pd
 from bs4 import BeautifulSoup
 import requests
-from oop import contacts
+
+from common.menu import print_menu
 
 
 # 파이썬에서 디폴트 생성자를 만든다 - __init__을 선언하지 않는다.
@@ -74,7 +75,7 @@ def main():
     # 16
     mr = MusicRanking()
     while 1:
-        menu = contacts.menu2(['exit', 'Bugs URL', 'Melon URL', 'Output', 'Print dict', 'Dict To Dataframe', 'Dataframe to CSV'])
+        menu = print_menu(['exit', 'Bugs URL', 'Melon URL', 'Output', 'Print dict', 'Dict To Dataframe', 'Dataframe to CSV'])
         # 0- exit, 1- Bugs (URL), 2- Melon (URL) 3- output, 4-print dict,
         # 5-dict to dataframe, 6-df to csv
         if menu == 0:
