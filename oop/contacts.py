@@ -14,7 +14,7 @@ class Contacts:
         print(f'{self.name}, {self.phone}, {self.email}, {self.address}')
 
 
-def set_contact():
+def set_contact() -> object:
     return Contacts(input('name: '), input('phone: '), input('email: '), input('address: '))
 
 
@@ -31,11 +31,11 @@ def del_contact(contacts, name):
             break
 
 
-def menu1(ls):
+def menu1(ls) -> int:
     return int(input('\t'.join(ls)))
 
 
-def menu2(ls):
+def menu2(ls) -> int:
     str = ''
     # '+=' 연산자는 두 문자열을 만들고 새로운 메모리에 저장하며,
     # 기존 문자열의 참조를 변경하는 연산을 반복적으로 수행하므로 .join 메소드에 비해 성능이 떨어진다.

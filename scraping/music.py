@@ -25,14 +25,16 @@ class MusicRanking(object):
 
     def get_raking(self):
         soup = BeautifulSoup(self.html, 'lxml')
+
         music_info = []
+
         for name in self.class_name:
             music_info.append(soup.find_all(name=f'{self.tag}', attrs={'class': f'{name}'}))
         _ = 0
         for title, artist in zip(*music_info):
             _ += 1
             print(f'{"*" * 50}\n{_} Rank\nTitle: {title.find("a").text}\nArtist: {artist.find("a").text}')
-        self.class_name = []
+        self.class_name.clear()
 
     def insert_dict(self):
         # 방법 1
@@ -51,7 +53,7 @@ class MusicRanking(object):
         for i, j in zip(self.titles, self.artists):
             self.dict[i] = j
 
-        self.class_name = []
+        self.class_name.clear()
         # 방법 3
         # for i, j in enumerate(self.titles):
         #     self.dict[j] = self.artists[i]
