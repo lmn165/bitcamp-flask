@@ -26,7 +26,6 @@ class ChangedTemperaturesOnMyBirthday(object):
         self.read_data()
         self.save_highest_temperature()
         self.visualize_data()
-        self.extract_date_data()
 
     def read_data(self):
         data = csv.reader(open('./data/unit_5_seoul.csv', 'r', encoding='UTF-8'))
@@ -41,8 +40,12 @@ class ChangedTemperaturesOnMyBirthday(object):
         # print(self.highest_temperature)
 
     def visualize_data(self):
-        plt.plot(self.highest_temperature, 'r')
-        plt.plot(self.lowest_temperature, 'b')
+        plt.rc('font', family='Malgun Gothic')
+        plt.rcParams['axes.unicode_minus'] = False
+        plt.title('내 생일의 기온 변화 그래프')
+        plt.plot(self.highest_temperature, 'r', label='high')
+        plt.plot(self.lowest_temperature, 'b', label='low')
+        plt.legend()
         plt.show()
 
     def extract_date_data(self, val):
@@ -51,24 +54,32 @@ class ChangedTemperaturesOnMyBirthday(object):
             if 1995 <= int(val[0].split('-')[0]):
                 self.highest_temperature.append(float(val[-1]))
                 self.lowest_temperature.append(float(val[-2]))
-
-    def show_highest_temperature(self):
+'''
+#     def show_highest_temperature(self):
         # print([i[-1] for i in self.data])
-        return [i[-1] for i in self.data]
+        # return [i[-1] for i in self.data]
 
     def highest_temperatures_my_birthday(self):
         high = []
         low = []
         for i in self.data:
             if i[-1] != '' and i[-2] != '':
-                if 1995 <= int(i[0].split('-')[0]):
-                    if i[0].split('-')[1] == '06' and i[0].split('-')[2] == '16':
-                        self.high.append(float(i[-1]))
-                        self.low.append(float(i[-2]))
+                if 1983 <= int(i[0].split('-')[0]):
+                    if i[0].split('-')[1]=='02' and i[0].split('-')[2] == '14':
+                        high.append(float(i[-1]))
+                        low.append(float(i[-2]))
+        plt.rc('font', family='Malgun Gothic')
+        plt.rcParams['axes.unicode_minus'] = False
+        plt.title('내 생일의 기온 변화 그래프')
+        plt.plot(high, 'hotpink', label='high')
+        plt.plot(low, 'skyblue', label='low')
+        plt.legend()
+        plt.show()
+'''
 
 
 if __name__ == '__main__':
     this = ChangedTemperaturesOnMyBirthday()
+    this.processing()
     # this.read_data()
-    # this.save_highest_temperature()
-    # this.visualize_data()
+    # this.highest_temperatures_my_birthday()
