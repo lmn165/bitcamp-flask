@@ -28,7 +28,7 @@ class ChangedTemperaturesOnMyBirthday(object):
         self.visualize_data()
 
     def read_data(self):
-        data = csv.reader(open('./data/unit_5_seoul.csv', 'r', encoding='UTF-8'))
+        data = csv.reader(open('data/seoul.csv', 'r', encoding='UTF-8'))
         next(data)
         self.data = data
         # print([i for i in data])
