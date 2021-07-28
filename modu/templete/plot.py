@@ -6,4 +6,3 @@ import matplotlib.pyplot as plt
 class Plot(object):
     dataset = Dataset()
     service = Service()
-    
